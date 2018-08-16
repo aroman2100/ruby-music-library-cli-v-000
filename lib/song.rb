@@ -78,6 +78,5 @@ class Song
     song
 
   end
-  binding.pry
 
 end

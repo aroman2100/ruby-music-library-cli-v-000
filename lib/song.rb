@@ -60,9 +60,9 @@ class Song
   end
 
   def self.new_from_filename(filename)
-      music = filename.chomp(".mp3").split(" - ")
+      music = filename.split(" - ")
       artist = Artist.find_or_create_by_name(music[0])
-      genre = Genre.find_or_create_by_name(music[2])
+      genre = Genre.find_or_create_by_name(music[2]).chomp(".mp3")
       song = self.new(music[1],artist,genre)
 
       # binding.pry
